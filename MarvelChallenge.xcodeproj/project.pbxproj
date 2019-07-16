@@ -121,9 +121,11 @@
 		4F3B9F4422DE64D200A155FE /* MarvelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				4F3B9F5122DE64D300A155FE /* Info.plist */,
 				4F3B9F4522DE64D200A155FE /* AppDelegate.swift */,
 				4F3B9F4C22DE64D300A155FE /* Assets.xcassets */,
-				4F3B9F5122DE64D300A155FE /* Info.plist */,
+				4F3B9F7322DE676500A155FE /* Common */,
+				4F3B9F7422DE676C00A155FE /* Modules */,
 			);
 			path = MarvelChallenge;
 			sourceTree = "<group>";
@@ -144,6 +146,76 @@
 				4F3B9F6722DE64D400A155FE /* Info.plist */,
 			);
 			path = MarvelChallengeUITests;
+			sourceTree = "<group>";
+		};
+		4F3B9F7322DE676500A155FE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B9F7B22DE67BC00A155FE /* Model */,
+				4F3B9F7922DE67AC00A155FE /* API */,
+				4F3B9F7A22DE67B100A155FE /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4F3B9F7422DE676C00A155FE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B9F7522DE677A00A155FE /* Character List */,
+				4F3B9F7722DE678E00A155FE /* Character Search  */,
+				4F3B9F7622DE678600A155FE /* Details */,
+				4F3B9F7822DE67A100A155FE /* Splash */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4F3B9F7522DE677A00A155FE /* Character List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Character List";
+			sourceTree = "<group>";
+		};
+		4F3B9F7622DE678600A155FE /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		4F3B9F7722DE678E00A155FE /* Character Search  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Character Search ";
+			sourceTree = "<group>";
+		};
+		4F3B9F7822DE67A100A155FE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4F3B9F7922DE67AC00A155FE /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4F3B9F7A22DE67B100A155FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F3B9F7B22DE67BC00A155FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D666C9065E0E55C5A5D4620A /* Frameworks */ = {
