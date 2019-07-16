@@ -26,13 +26,15 @@ extension SplashViewController{
     
     private func initializeScreen(){
         
+        view.backgroundColor = .white
         logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "marvel-logo")
         
         view.addSubview(logoImageView)
         
-        NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: logoImageView, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: logoImageView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: logoImageView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0.5, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: logoImageView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: logoImageView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: logoImageView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
     }
