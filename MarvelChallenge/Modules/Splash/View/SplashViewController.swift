@@ -19,6 +19,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
 
         initializeScreen()
+        initializeLabel()
         presenter?.viewDidLoad()
     }
 }
@@ -38,6 +39,9 @@ extension SplashViewController{
         NSLayoutConstraint(item: logoImageView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: logoImageView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: logoImageView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+    }
+    
+    private func initializeLabel(){
         
         label = UILabel()
         label.text = "Marvel Characters Library"
