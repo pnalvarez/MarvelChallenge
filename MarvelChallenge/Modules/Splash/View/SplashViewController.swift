@@ -11,6 +11,7 @@ import UIKit
 class SplashViewController: UIViewController {
     
     var logoImageView: UIImageView!
+    var label: UILabel!
     
     var presenter: SplashPresenterInput?
 
@@ -37,5 +38,21 @@ extension SplashViewController{
         NSLayoutConstraint(item: logoImageView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: logoImageView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: logoImageView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+        
+        label = UILabel()
+        label.text = "Marvel Characters Library"
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
+        
+        view.addSubview(label)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: logoImageView, attribute: .bottom, relatedBy: .equal, toItem: label, attribute: .top, multiplier: 1.0, constant: 3.0).isActive = true
+        NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: label, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: label, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0.1, constant: 0.0).isActive = true
     }
 }
