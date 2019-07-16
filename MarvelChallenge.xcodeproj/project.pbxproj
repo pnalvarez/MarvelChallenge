@@ -11,6 +11,11 @@
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
 		4F3B9F6622DE64D400A155FE /* MarvelChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F6522DE64D400A155FE /* MarvelChallengeUITests.swift */; };
+		4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F7F22DE695100A155FE /* SplashViewController.swift */; };
+		4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F8122DE696400A155FE /* SplashViewControllerBuilder.swift */; };
+		4F3B9F8422DE699000A155FE /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F8322DE699000A155FE /* SplashPresenter.swift */; };
+		4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F8522DE69A600A155FE /* SplashPresenterBuilder.swift */; };
+		4F3B9F8822DE69C600A155FE /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F8722DE69C600A155FE /* SplashWireframe.swift */; };
 		5219E8E112FB517779289459 /* Pods_MarvelChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52E8A8A9F417880F5599383 /* Pods_MarvelChallenge.framework */; };
 		66FEE1964F8C8A37110160F3 /* Pods_MarvelChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE471D5240CF8C7CF770B50 /* Pods_MarvelChallengeTests.framework */; };
 		FEBDD7D8BC6F6137474E88C9 /* Pods_MarvelChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F68425CFBB8E943EEAF58620 /* Pods_MarvelChallengeUITests.framework */; };
@@ -46,6 +51,11 @@
 		4F3B9F6122DE64D400A155FE /* MarvelChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F6522DE64D400A155FE /* MarvelChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelChallengeUITests.swift; sourceTree = "<group>"; };
 		4F3B9F6722DE64D400A155FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3B9F7F22DE695100A155FE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4F3B9F8122DE696400A155FE /* SplashViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerBuilder.swift; sourceTree = "<group>"; };
+		4F3B9F8322DE699000A155FE /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		4F3B9F8522DE69A600A155FE /* SplashPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterBuilder.swift; sourceTree = "<group>"; };
+		4F3B9F8722DE69C600A155FE /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
 		9FF12EA3295C61E25A5C9011 /* Pods-MarvelChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallengeUITests/Pods-MarvelChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE4AE78CB9BE3FEF5E0E0A46 /* Pods-MarvelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallenge.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallenge/Pods-MarvelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		C800FB9F3DF0799809B0AB34 /* Pods-MarvelChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallengeTests/Pods-MarvelChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +203,9 @@
 		4F3B9F7822DE67A100A155FE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				4F3B9F7D22DE691B00A155FE /* Presenter */,
+				4F3B9F7C22DE691400A155FE /* View */,
+				4F3B9F7E22DE692300A155FE /* Wireframe */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -216,6 +229,32 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4F3B9F7C22DE691400A155FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B9F7F22DE695100A155FE /* SplashViewController.swift */,
+				4F3B9F8122DE696400A155FE /* SplashViewControllerBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F3B9F7D22DE691B00A155FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B9F8322DE699000A155FE /* SplashPresenter.swift */,
+				4F3B9F8522DE69A600A155FE /* SplashPresenterBuilder.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4F3B9F7E22DE692300A155FE /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B9F8722DE69C600A155FE /* SplashWireframe.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		D666C9065E0E55C5A5D4620A /* Frameworks */ = {
@@ -457,6 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */,
+				4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */,
+				4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */,
+				4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */,
+				4F3B9F8422DE699000A155FE /* SplashPresenter.swift in Sources */,
+				4F3B9F8822DE69C600A155FE /* SplashWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
