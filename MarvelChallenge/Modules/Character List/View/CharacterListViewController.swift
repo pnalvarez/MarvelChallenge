@@ -11,18 +11,33 @@ import UIKit
 class CharacterListViewController: UIViewController {
     
     var charactersTableView: UITableView!
+    
+    var presenter: CharacterListPresenterInput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       initializeTableView()
     }
 
 }
 
 extension CharacterListViewController{
     
-    
+    private func initializeTableView(){
+        
+        charactersTableView = UITableView()
+        charactersTableView.delegate = self
+        charactersTableView.dataSource = self
+        
+        view.addSubview(charactersTableView)
+        
+        charactersTableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: charactersTableView, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: charactersTableView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: charactersTableView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: charactersTableView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+    }
 }
 
 extension CharacterListViewController: UITableViewDelegate, UITableViewDataSource{
