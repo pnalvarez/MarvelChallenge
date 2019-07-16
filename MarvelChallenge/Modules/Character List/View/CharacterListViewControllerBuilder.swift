@@ -7,14 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 struct CharacterListViewControllerBuilder{
+    
+    var stackView: UIStackView!
     
     static func make(wireframe: CharacterListWireframe) -> CharacterListViewController{
         
         let viewController = CharacterListViewController()
-        viewController.title = "Character list"
+        
+        let imageView = UIImageView(image: UIImage(named: "marvel-logo"))
+        viewController.navigationItem.titleView = imageView
         
         return viewController
+    }
+    
+    private func createStackView(){
+        
     }
 }
