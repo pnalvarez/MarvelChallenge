@@ -10,7 +10,10 @@ import Foundation
 
 struct CharacterListViewControllerBuilder{
     
-    static func make(wireframe: CharacterListWireframe){
+    static func make(wireframe: CharacterListWireframe) -> CharacterListViewController{
         
+        let viewController = CharacterListViewController()
+        
+        return viewController
     }
 }

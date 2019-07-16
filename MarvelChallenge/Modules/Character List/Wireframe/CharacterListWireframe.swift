@@ -11,9 +11,8 @@ import UIKit
 
 final class CharacterListWireframe{
     
-    var window: UIWindow?
-    
     func present(window: UIWindow){
         
+        window.rootViewController = CharacterListViewControllerBuilder.make(wireframe: self)
     }
 }

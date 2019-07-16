@@ -24,7 +24,8 @@ final class SplashPresenter: SplashPresenterInput{
     func viewDidLoad() {
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3){
-
+            
+            self.wireframe.presentCharacterList()
         }
     }
 }

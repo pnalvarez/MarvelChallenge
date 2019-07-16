@@ -19,4 +19,12 @@ final class SplashWireframe{
         window.rootViewController = SplashViewControllerBuilder.make(wireframe: self)
         self.window = window
     }
+    
+    func presentCharacterList(){
+        
+        guard let window = self.window else{
+            return
+        }
+        CharacterListWireframe().present(window: window)
+    }
 }

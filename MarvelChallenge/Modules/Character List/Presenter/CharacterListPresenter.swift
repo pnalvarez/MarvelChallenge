@@ -10,6 +10,9 @@ import Foundation
 
 protocol CharacterListPresenterInput{
     
+    func viewDidLoad()
+    
+    var output: CharacterListPresenterOutput?{get}
 }
 
 protocol CharacterListPresenterOutput: class{
@@ -19,4 +22,9 @@ protocol CharacterListPresenterOutput: class{
 
 final class CharacterListPresenter: CharacterListPresenterInput{
     
+    weak var output: CharacterListPresenterOutput?
+    
+    func viewDidLoad() {
+        
+    }
 }
