@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
+        UINavigationBar.setTheme()
+        
         SplashWireframe().present(window: window)
         return true
     }

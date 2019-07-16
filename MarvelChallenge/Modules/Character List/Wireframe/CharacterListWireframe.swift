@@ -13,6 +13,6 @@ final class CharacterListWireframe{
     
     func present(window: UIWindow){
         
-        window.rootViewController = CharacterListViewControllerBuilder.make(wireframe: self)
+        window.rootViewController = UINavigationController(rootViewController: CharacterListViewControllerBuilder.make(wireframe: self))
     }
 }

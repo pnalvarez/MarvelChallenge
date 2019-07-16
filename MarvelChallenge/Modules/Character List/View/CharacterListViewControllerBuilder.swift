@@ -13,6 +13,7 @@ struct CharacterListViewControllerBuilder{
     static func make(wireframe: CharacterListWireframe) -> CharacterListViewController{
         
         let viewController = CharacterListViewController()
+        viewController.title = "Character list"
         
         return viewController
     }

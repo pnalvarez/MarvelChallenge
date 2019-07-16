@@ -24,6 +24,7 @@
 		4F3B9F9A22DE75B500A155FE /* CharacterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F9922DE75B500A155FE /* CharacterListManager.swift */; };
 		4F3B9F9C22DE75F100A155FE /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F9B22DE75F100A155FE /* CharacterListInteractor.swift */; };
 		4F3B9F9E22DE763000A155FE /* CharacterListInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F9D22DE763000A155FE /* CharacterListInteractorBuilder.swift */; };
+		4F3B9FA022DE7C8E00A155FE /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F9F22DE7C8E00A155FE /* UINavigationBar.swift */; };
 		5219E8E112FB517779289459 /* Pods_MarvelChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52E8A8A9F417880F5599383 /* Pods_MarvelChallenge.framework */; };
 		66FEE1964F8C8A37110160F3 /* Pods_MarvelChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE471D5240CF8C7CF770B50 /* Pods_MarvelChallengeTests.framework */; };
 		FEBDD7D8BC6F6137474E88C9 /* Pods_MarvelChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F68425CFBB8E943EEAF58620 /* Pods_MarvelChallengeUITests.framework */; };
@@ -72,6 +73,7 @@
 		4F3B9F9922DE75B500A155FE /* CharacterListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListManager.swift; sourceTree = "<group>"; };
 		4F3B9F9B22DE75F100A155FE /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		4F3B9F9D22DE763000A155FE /* CharacterListInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractorBuilder.swift; sourceTree = "<group>"; };
+		4F3B9F9F22DE7C8E00A155FE /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		9FF12EA3295C61E25A5C9011 /* Pods-MarvelChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallengeUITests/Pods-MarvelChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE4AE78CB9BE3FEF5E0E0A46 /* Pods-MarvelChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallenge.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallenge/Pods-MarvelChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		C800FB9F3DF0799809B0AB34 /* Pods-MarvelChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelChallengeTests/Pods-MarvelChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		4F3B9F7A22DE67B100A155FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4F3B9F9F22DE7C8E00A155FE /* UINavigationBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */,
 				4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */,
 				4F3B9F9E22DE763000A155FE /* CharacterListInteractorBuilder.swift in Sources */,
+				4F3B9FA022DE7C8E00A155FE /* UINavigationBar.swift in Sources */,
 				4F3B9F9222DE74E700A155FE /* CharacterListViewController.swift in Sources */,
 				4F3B9F9622DE751400A155FE /* CharacterListPresenter.swift in Sources */,
 				4F3B9F8422DE699000A155FE /* SplashPresenter.swift in Sources */,
