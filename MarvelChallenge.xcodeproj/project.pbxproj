@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E24F22DEBAEE002B3E94 /* APIProvider.swift */; };
 		3F16E25222DEBEFB002B3E94 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */; };
+		3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -54,6 +55,7 @@
 		1AE471D5240CF8C7CF770B50 /* Pods_MarvelChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F16E24F22DEBAEE002B3E94 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterEntity.swift; path = MarvelChallenge/Common/API/CharacterEntity.swift; sourceTree = SOURCE_ROOT; };
+		3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDisplay.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +138,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		3F16E25522DF7E90002B3E94 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		4F3B9F3922DE64D200A155FE = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +200,7 @@
 		4F3B9F7322DE676500A155FE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3F16E25522DF7E90002B3E94 /* Mappers */,
 				3F16E24E22DEBAE1002B3E94 /* API */,
 				4F3B9F7B22DE67BC00A155FE /* Model */,
 				4F3B9F7A22DE67B100A155FE /* Extensions */,
@@ -301,6 +311,7 @@
 			children = (
 				4F3B9F9522DE751400A155FE /* CharacterListPresenter.swift */,
 				4F3B9F9722DE757900A155FE /* CharacterListPresenterBuilder.swift */,
+				3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -568,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */,
 				4F3B9F9822DE757900A155FE /* CharacterListPresenterBuilder.swift in Sources */,
 				3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */,
 				4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */,

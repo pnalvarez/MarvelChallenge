@@ -13,7 +13,6 @@ final class CharacterEntity: NSObject, Mappable{
     
     var id: Int = 0
     var name: String = ""
-    var charDescription: String = ""
     
     private var thumbnail: [String : Any] = [:]
     
@@ -35,7 +34,6 @@ final class CharacterEntity: NSObject, Mappable{
         
         id <- map["id"]
         name <- map["name"]
-        charDescription <- map["description"]
         thumbnail <- map["thumbnail"]
     }
 }
