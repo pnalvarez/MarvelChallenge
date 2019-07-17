@@ -10,10 +10,12 @@ import Foundation
 
 struct CharacterListDisplay{
     
+    var id: Int
     var thumb: String
     var name: String
     
-    init(thumb: String, name: String) {
+    init(id: Int, thumb: String, name: String) {
+        self.id = id
         self.thumb = thumb
         self.name = name
     }
