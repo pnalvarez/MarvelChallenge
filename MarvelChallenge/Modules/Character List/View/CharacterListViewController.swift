@@ -81,9 +81,15 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let displayContent = presenter?.displayForRowInSection(index: indexPath.row)
+        guard let displayContent = presenter?.displayForRowInSection(index: indexPath.row) else{
+            return UITableViewCell()
+        }
         
-        return UITableViewCell()
+        let cell = charactersTableView.dequeueReusableCell(withIdentifier: CharacterListTableViewCell.defaultReuseIdentifier) as! CharacterListTableViewCell
+        
+        cell.configure(display: displayContent)
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

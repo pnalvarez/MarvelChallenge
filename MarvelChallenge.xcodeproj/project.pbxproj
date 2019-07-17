@@ -12,6 +12,8 @@
 		3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */; };
 		3F16E25722DF8901002B3E94 /* CharacterListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */; };
 		3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */; };
+		3F16E25B22DF91D5002B3E94 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25A22DF91D5002B3E94 /* ReusableView.swift */; };
+		3F16E25D22DF9217002B3E94 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25C22DF9217002B3E94 /* UITableViewCell.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -60,6 +62,8 @@
 		3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDisplay.swift; sourceTree = "<group>"; };
 		3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListMapper.swift; sourceTree = "<group>"; };
 		3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewCell.swift; sourceTree = "<group>"; };
+		3F16E25A22DF91D5002B3E94 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		3F16E25C22DF9217002B3E94 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				4F3B9F9F22DE7C8E00A155FE /* UINavigationBar.swift */,
+				3F16E25A22DF91D5002B3E94 /* ReusableView.swift */,
+				3F16E25C22DF9217002B3E94 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */,
 				3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */,
 				4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */,
+				3F16E25D22DF9217002B3E94 /* UITableViewCell.swift in Sources */,
 				4F3B9F9C22DE75F100A155FE /* CharacterListInteractor.swift in Sources */,
 				4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */,
 				4F3B9F9A22DE75B500A155FE /* CharacterListManager.swift in Sources */,
@@ -597,6 +604,7 @@
 				3F16E25722DF8901002B3E94 /* CharacterListMapper.swift in Sources */,
 				4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */,
 				4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */,
+				3F16E25B22DF91D5002B3E94 /* ReusableView.swift in Sources */,
 				4F3B9F9E22DE763000A155FE /* CharacterListInteractorBuilder.swift in Sources */,
 				4F3B9FA022DE7C8E00A155FE /* UINavigationBar.swift in Sources */,
 				4F3B9F9222DE74E700A155FE /* CharacterListViewController.swift in Sources */,
