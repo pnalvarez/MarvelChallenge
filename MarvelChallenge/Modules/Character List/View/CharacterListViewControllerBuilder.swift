@@ -17,13 +17,6 @@ struct CharacterListViewControllerBuilder{
         
         let viewController = CharacterListViewController()
         
-        let imageView = UIImageView(image: UIImage(named: "marvel-logo"))
-        viewController.navigationItem.titleView = imageView
-        
         return viewController
-    }
-    
-    private func createStackView(){
-        
     }
 }

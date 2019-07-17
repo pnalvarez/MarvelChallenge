@@ -11,6 +11,9 @@ import UIKit
 class CharacterListViewController: UIViewController {
     
     var charactersTableView: UITableView!
+    var headerVerticalStackView: UIStackView!
+    var headerHorizontalStackView: UIStackView!
+    var headerImageView: UIImageView!
     
     var presenter: CharacterListPresenterInput?
 
@@ -18,6 +21,9 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
 
        setNeedsStatusBarAppearanceUpdate()
+        
+       navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: 200, height: 2000)
+       initializeStackViews()
        initializeTableView()
     }
 
@@ -38,6 +44,30 @@ extension CharacterListViewController{
         NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: charactersTableView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: charactersTableView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: charactersTableView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+    }
+    
+    private func initializeStackViews(){
+    
+        headerImageView = UIImageView(image: UIImage(named: "marvel-logo"))
+        headerImageView.contentMode = .scaleAspectFill
+        
+        headerVerticalStackView = UIStackView()
+        headerVerticalStackView.axis = .vertical
+        headerVerticalStackView.distribution = .fillEqually
+        
+        headerHorizontalStackView = UIStackView()
+        headerHorizontalStackView.axis = .horizontal
+        headerHorizontalStackView.distribution = .fillEqually
+        
+        headerHorizontalStackView.addArrangedSubview(UIView())
+        headerHorizontalStackView.addArrangedSubview(headerImageView)
+        headerHorizontalStackView.addArrangedSubview(UIView())
+        
+        headerVerticalStackView.addArrangedSubview(UIView())
+        headerVerticalStackView.addArrangedSubview(headerHorizontalStackView)
+        headerVerticalStackView.addArrangedSubview(UIView())
+        
+        navigationItem.titleView = headerVerticalStackView
     }
 }
 
