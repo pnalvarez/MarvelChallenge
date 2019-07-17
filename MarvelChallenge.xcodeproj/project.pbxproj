@@ -10,6 +10,7 @@
 		3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E24F22DEBAEE002B3E94 /* APIProvider.swift */; };
 		3F16E25222DEBEFB002B3E94 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */; };
 		3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */; };
+		3F16E25722DF8901002B3E94 /* CharacterListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -56,6 +57,7 @@
 		3F16E24F22DEBAEE002B3E94 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterEntity.swift; path = MarvelChallenge/Common/API/CharacterEntity.swift; sourceTree = SOURCE_ROOT; };
 		3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDisplay.swift; sourceTree = "<group>"; };
+		3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListMapper.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		3F16E25522DF7E90002B3E94 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */,
 				4F3B9F9A22DE75B500A155FE /* CharacterListManager.swift in Sources */,
 				4F3B9F9422DE74F700A155FE /* CharacterListViewControllerBuilder.swift in Sources */,
+				3F16E25722DF8901002B3E94 /* CharacterListMapper.swift in Sources */,
 				4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */,
 				4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */,
 				4F3B9F9E22DE763000A155FE /* CharacterListInteractorBuilder.swift in Sources */,

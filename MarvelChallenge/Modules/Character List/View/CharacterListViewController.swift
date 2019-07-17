@@ -16,8 +16,6 @@ class CharacterListViewController: UIViewController {
     var headerImageView: UIImageView!
     
     var presenter: CharacterListPresenterInput?
-    
-    var charactersDisplay: [CharacterListDisplay] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +73,10 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return charactersDisplay.count
+        guard let rowCount = presenter?.numberOfRowsInSection() else{
+            return 0
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
