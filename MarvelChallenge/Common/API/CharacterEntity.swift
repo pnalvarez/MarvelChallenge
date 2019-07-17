@@ -26,7 +26,7 @@ final class CharacterEntity: NSObject, Mappable{
     }
     
     var thumb: String{
-        return path + fileExtension
+        return path + "." + fileExtension
     }
     
     init?(map: Map) {}
