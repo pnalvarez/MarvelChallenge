@@ -21,8 +21,6 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
 
        setNeedsStatusBarAppearanceUpdate()
-        
-       navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: 200, height: 2000)
        initializeStackViews()
        initializeTableView()
     }
