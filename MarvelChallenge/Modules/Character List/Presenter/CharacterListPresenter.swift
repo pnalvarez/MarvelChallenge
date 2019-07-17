@@ -13,12 +13,14 @@ protocol CharacterListPresenterInput{
     func viewDidLoad()
     func numberOfRowsInSection() -> Int
     func displayForRowInSection(index: Int) -> CharacterListDisplay
+    func cellWillDisplay(index: Int)
     
     var output: CharacterListPresenterOutput?{get}
 }
 
 protocol CharacterListPresenterOutput: class{
     
+    func updateUI()
 }
 
 
@@ -37,6 +39,7 @@ final class CharacterListPresenter: CharacterListPresenterInput{
     
     func viewDidLoad() {
         
+        interactor.firstLoad()
     }
     
     func numberOfRowsInSection() -> Int {
@@ -47,11 +50,17 @@ final class CharacterListPresenter: CharacterListPresenterInput{
         return charactersDisplay[index]
     }
     
+    func cellWillDisplay(index: Int) {
+        
+        interactor.loadNextCharacter(offset: index)
+    }
+    
 }
 
 extension CharacterListPresenter: CharacterListInteractorOutput{
     
     func loadedCharacters(characters: [CharacterEntity]) {
         
+        charactersDisplay.append(contentsOf: CharacterListMapper.make(from: characters))
     }
 }

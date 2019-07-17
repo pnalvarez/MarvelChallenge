@@ -11,6 +11,7 @@
 		3F16E25222DEBEFB002B3E94 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */; };
 		3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */; };
 		3F16E25722DF8901002B3E94 /* CharacterListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */; };
+		3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -58,6 +59,7 @@
 		3F16E25122DEBEFB002B3E94 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterEntity.swift; path = MarvelChallenge/Common/API/CharacterEntity.swift; sourceTree = SOURCE_ROOT; };
 		3F16E25322DF7E4A002B3E94 /* CharacterListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDisplay.swift; sourceTree = "<group>"; };
 		3F16E25622DF8901002B3E94 /* CharacterListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListMapper.swift; sourceTree = "<group>"; };
+		3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewCell.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				4F3B9F9122DE74E700A155FE /* CharacterListViewController.swift */,
 				4F3B9F9322DE74F700A155FE /* CharacterListViewControllerBuilder.swift */,
+				3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 			files = (
 				3F16E25422DF7E4A002B3E94 /* CharacterListDisplay.swift in Sources */,
 				4F3B9F9822DE757900A155FE /* CharacterListPresenterBuilder.swift in Sources */,
+				3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */,
 				3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */,
 				4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */,
 				4F3B9F9C22DE75F100A155FE /* CharacterListInteractor.swift in Sources */,

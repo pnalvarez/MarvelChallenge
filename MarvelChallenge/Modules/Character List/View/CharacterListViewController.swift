@@ -80,10 +80,28 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let displayContent = presenter?.displayForRowInSection(index: indexPath.row)
+        
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return charactersTableView.frame.height / 6
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        presenter?.cellWillDisplay(index: indexPath.row)
+    }
+}
+
+extension CharacterListViewController: CharacterListPresenterOutput{
+    
+    func updateUI() {
+        
+        DispatchQueue.main.async {
+            self.charactersTableView.reloadData()
+        }
     }
 }

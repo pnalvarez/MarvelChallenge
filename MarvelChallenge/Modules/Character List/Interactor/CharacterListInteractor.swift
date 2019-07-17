@@ -43,6 +43,10 @@ final class CharacterListInteractor: CharacterListInteractorInput{
     
     func loadNextCharacter(offset: Int) {
         
+        guard currentOffset < offset else{
+            return
+        }
+        
         currentOffset += 1
         
         manager.getNewCharacter(offset: currentOffset){ character in
