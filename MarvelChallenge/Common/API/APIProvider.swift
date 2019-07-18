@@ -36,11 +36,11 @@ final class APIProvider{
         
         request(url: url){ character in
             
-            guard let result = character, let data = result["data"] as? [String : Any], let chars = Mapper<CharacterEntity>().mapArray(JSONObject: data["results"]) else{
+            guard let result = character, let data = result["data"] as? [String : Any], let total = data["total"] as? Int ,let chars = Mapper<CharacterEntity>().mapArray(JSONObject: data["results"]) else{
                 completion([])
                 return
             }
-            
+            CharacterEntity.total = total
             completion(chars)
         }
     }

@@ -14,6 +14,11 @@ struct CharacterListDisplay{
     var thumb: String
     var name: String
     
+    static var total: Int{
+        return CharacterEntity.total
+    }
+    
+    
     init(id: Int, thumb: String, name: String) {
         self.id = id
         self.thumb = thumb

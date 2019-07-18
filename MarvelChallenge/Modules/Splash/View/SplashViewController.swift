@@ -28,7 +28,7 @@ extension SplashViewController{
     
     private func initializeScreen(){
         
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "marvel-logo")
         
@@ -46,7 +46,7 @@ extension SplashViewController{
         label = UILabel()
         label.text = "Marvel Characters Library"
         label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .center
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true

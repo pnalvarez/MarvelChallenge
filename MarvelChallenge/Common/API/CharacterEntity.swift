@@ -11,6 +11,7 @@ import ObjectMapper
 
 final class CharacterEntity: NSObject, Mappable{
     
+    static var total: Int = 0
     var id: Int = 0
     var name: String = ""
     
