@@ -13,10 +13,9 @@ class CharacterListTableViewCell: UITableViewCell {
 
     var thumbImageView: UIImageView!
     var nameLabel: UILabel!
-    
 
     func configure(display: CharacterListDisplay){
-        
+    
         thumbImageView.sd_setImage(with: URL(string: display.thumb), completed: nil)
         nameLabel.text = display.name
     }
@@ -24,30 +23,34 @@ class CharacterListTableViewCell: UITableViewCell {
 
 extension CharacterListTableViewCell{
     
-    private func initializeCell(){
+    func initializeCell(){
         
         thumbImageView = UIImageView()
-        
+        thumbImageView.contentMode = .scaleToFill
+
         self.addSubview(thumbImageView)
-        
+
         thumbImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: thumbImageView, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: thumbImageView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: thumbImageView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: thumbImageView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
-        
+        thumbImageView.centerXAnchor.constraint(equalToSystemSpacingAfter: centerXAnchor, multiplier: 1.0).isActive = true
+        thumbImageView.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 1.0).isActive = true
+        thumbImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0).isActive = true
+        thumbImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
+
         nameLabel = UILabel()
+        nameLabel.backgroundColor = .white
         nameLabel.textAlignment = .center
-        nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)
+        nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 12.0)
         nameLabel.backgroundColor = .white
         nameLabel.textColor = .black
-        
-        thumbImageView.addSubview(nameLabel)
-        
+        nameLabel.minimumScaleFactor = 0.5
+        nameLabel.adjustsFontSizeToFitWidth = true
+
+        self.addSubview(nameLabel)
+
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: thumbImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: thumbImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: thumbImageView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: thumbImageView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.2, constant: 0.0).isActive = true
+        nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25).isActive = true
+        nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1.0).isActive = true
+        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: leftAnchor, multiplier: 1.0).isActive = true
     }
 }

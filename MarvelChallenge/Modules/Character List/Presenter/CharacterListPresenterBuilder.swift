@@ -10,7 +10,13 @@ import Foundation
 
 struct CharacterListPresenterBuilder{
     
-    static func make(wireframe: CharacterListWireframe){
+    static func make(wireframe: CharacterListWireframe) -> CharacterListPresenter{
         
+        let interactor = CharacterListInteractorBuilder.make()
+        let presenter = CharacterListPresenter(interactor: interactor, wireframe: wireframe)
+        
+        interactor.output = presenter
+        
+        return presenter
     }
 }

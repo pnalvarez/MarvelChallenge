@@ -62,5 +62,6 @@ extension CharacterListPresenter: CharacterListInteractorOutput{
     func loadedCharacters(characters: [CharacterEntity]) {
         
         charactersDisplay.append(contentsOf: CharacterListMapper.make(from: characters))
+        output?.updateUI()
     }
 }

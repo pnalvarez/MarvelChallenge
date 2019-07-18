@@ -23,6 +23,8 @@ class CharacterListViewController: UIViewController {
        setNeedsStatusBarAppearanceUpdate()
        initializeStackViews()
        initializeTableView()
+        
+       presenter?.viewDidLoad()
     }
 
 }
@@ -85,7 +87,8 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
-        let cell = charactersTableView.dequeueReusableCell(withIdentifier: CharacterListTableViewCell.defaultReuseIdentifier) as! CharacterListTableViewCell
+        let cell = CharacterListTableViewCell()
+        cell.initializeCell()
         
         cell.configure(display: displayContent)
         
