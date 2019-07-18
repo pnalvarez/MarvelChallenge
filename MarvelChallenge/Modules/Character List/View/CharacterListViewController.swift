@@ -99,7 +99,7 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let displayContent = presenter?.displayForRowInSection(index: indexPath.row) else{
-            return UITableViewCell()
+            return LoadingTableViewCell()
         }
         
         let cell = CharacterListTableViewCell()

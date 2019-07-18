@@ -15,7 +15,7 @@ class LoadingTableViewCell: UITableViewCell {
     func configure(){
         
         activityIndicator = UIActivityIndicatorView(style: .gray)
-        activityIndicator.backgroundColor = .gray
+        activityIndicator.backgroundColor = .black
         activityIndicator.color = .white
         activityIndicator.startAnimating()
         

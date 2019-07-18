@@ -12,7 +12,7 @@ protocol CharacterListPresenterInput{
     
     func viewDidLoad()
     func numberOfRowsInSection() -> Int
-    func displayForRowInSection(index: Int) -> CharacterListDisplay
+    func displayForRowInSection(index: Int) -> CharacterListDisplay?
     func cellWillDisplay(index: Int)
     
     var output: CharacterListPresenterOutput?{get}
@@ -43,11 +43,15 @@ final class CharacterListPresenter: CharacterListPresenterInput{
     }
     
     func numberOfRowsInSection() -> Int {
-        return charactersDisplay.count
+        return CharacterListDisplay.total
     }
     
-    func displayForRowInSection(index: Int) -> CharacterListDisplay {
-        return charactersDisplay[index]
+    func displayForRowInSection(index: Int) -> CharacterListDisplay? {
+        
+        if index < charactersDisplay.count {
+            return charactersDisplay[index]
+        }
+        return nil
     }
     
     func cellWillDisplay(index: Int) {
