@@ -104,7 +104,7 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         
         let cell = CharacterListTableViewCell()
         cell.initializeCell()
-        
+
         cell.configure(display: displayContent)
         
         return cell

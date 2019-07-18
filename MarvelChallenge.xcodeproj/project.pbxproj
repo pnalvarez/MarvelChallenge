@@ -14,6 +14,7 @@
 		3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */; };
 		3F16E25B22DF91D5002B3E94 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25A22DF91D5002B3E94 /* ReusableView.swift */; };
 		3F16E25D22DF9217002B3E94 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25C22DF9217002B3E94 /* UITableViewCell.swift */; };
+		3F16E25F22E01B97002B3E94 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E25E22E01B97002B3E94 /* LoadingTableViewCell.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -64,6 +65,7 @@
 		3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewCell.swift; sourceTree = "<group>"; };
 		3F16E25A22DF91D5002B3E94 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		3F16E25C22DF9217002B3E94 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		3F16E25E22E01B97002B3E94 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				4F3B9F9122DE74E700A155FE /* CharacterListViewController.swift */,
 				4F3B9F9322DE74F700A155FE /* CharacterListViewControllerBuilder.swift */,
 				3F16E25822DF8DE2002B3E94 /* CharacterListTableViewCell.swift */,
+				3F16E25E22E01B97002B3E94 /* LoadingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				3F16E25922DF8DE2002B3E94 /* CharacterListTableViewCell.swift in Sources */,
 				3F16E25022DEBAEE002B3E94 /* APIProvider.swift in Sources */,
 				4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */,
+				3F16E25F22E01B97002B3E94 /* LoadingTableViewCell.swift in Sources */,
 				3F16E25D22DF9217002B3E94 /* UITableViewCell.swift in Sources */,
 				4F3B9F9C22DE75F100A155FE /* CharacterListInteractor.swift in Sources */,
 				4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */,
