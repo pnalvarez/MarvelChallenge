@@ -52,7 +52,6 @@ extension CharacterListViewController{
     
         headerImageView = UIImageView()
         headerImageView.image =  UIImage(named: "marvel-logo")
-//        headerImageView.contentMode = .scaleAspectFill
 
         headerVerticalStackView = UIStackView()
         headerVerticalStackView.axis = .vertical
@@ -99,7 +98,9 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let displayContent = presenter?.displayForRowInSection(index: indexPath.row) else{
-            return LoadingTableViewCell()
+            let loadingCell = LoadingTableViewCell()
+            loadingCell.configure()
+            return loadingCell
         }
         
         let cell = CharacterListTableViewCell()
@@ -116,7 +117,11 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        presenter?.cellWillDisplay(index: indexPath.row)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if tableView.visibleCells.contains(cell) {
+                self.presenter?.cellWillDisplay(index: indexPath.row)
+            }
+        }
     }
 }
 
