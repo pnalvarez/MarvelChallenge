@@ -14,6 +14,7 @@ class CharacterListViewController: UIViewController {
     var headerVerticalStackView: UIStackView!
     var headerHorizontalStackView: UIStackView!
     var headerImageView: UIImageView!
+    var defaultActivityIndicator: UIActivityIndicatorView!
     
     var presenter: CharacterListPresenterInput?
 
@@ -23,6 +24,7 @@ class CharacterListViewController: UIViewController {
        setNeedsStatusBarAppearanceUpdate()
        initializeStackViews()
        initializeTableView()
+       handleEmptyTableView()
         
        presenter?.viewDidLoad()
     }
@@ -48,26 +50,39 @@ extension CharacterListViewController{
     
     private func initializeStackViews(){
     
-        headerImageView = UIImageView(image: UIImage(named: "marvel-logo"))
-        headerImageView.contentMode = .scaleAspectFill
-        
+        headerImageView = UIImageView()
+        headerImageView.image =  UIImage(named: "marvel-logo")
+//        headerImageView.contentMode = .scaleAspectFill
+
         headerVerticalStackView = UIStackView()
         headerVerticalStackView.axis = .vertical
         headerVerticalStackView.distribution = .fillEqually
-        
+
         headerHorizontalStackView = UIStackView()
         headerHorizontalStackView.axis = .horizontal
         headerHorizontalStackView.distribution = .fillEqually
-        
+
         headerHorizontalStackView.addArrangedSubview(UIView())
         headerHorizontalStackView.addArrangedSubview(headerImageView)
         headerHorizontalStackView.addArrangedSubview(UIView())
-        
+
         headerVerticalStackView.addArrangedSubview(UIView())
         headerVerticalStackView.addArrangedSubview(headerHorizontalStackView)
         headerVerticalStackView.addArrangedSubview(UIView())
         
-        navigationItem.titleView = headerVerticalStackView
+        navigationItem.titleView = headerImageView
+    }
+    
+    private func handleEmptyTableView(){
+        
+        charactersTableView.separatorStyle = .none
+        
+        defaultActivityIndicator = UIActivityIndicatorView(style: .gray)
+        defaultActivityIndicator.startAnimating()
+        defaultActivityIndicator.backgroundColor = .gray
+        defaultActivityIndicator.color = .white
+        
+        charactersTableView.backgroundView = defaultActivityIndicator
     }
 }
 
