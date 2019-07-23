@@ -71,6 +71,7 @@ extension DetailsViewController{
         nameLabelStackView.axis = .vertical
         nameLabelStackView.distribution = .fill
         
+        labelsStackView.addArrangedSubview(UIView())
         labelsStackView.addArrangedSubview(nameLabelStackView)
         
         let nameLabel = UILabel()
@@ -78,12 +79,16 @@ extension DetailsViewController{
         nameLabel.textColor = .red
         nameLabel.font = UIFont(name: "HelveticaNeue", size: 15.0)
         nameLabel.textAlignment = .left
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.5
         
         characterNameLabel = UILabel()
         characterNameLabel.textColor = .gray
         characterNameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 15.0)
         characterNameLabel.numberOfLines = 1
         characterNameLabel.textAlignment = .left
+        characterNameLabel.minimumScaleFactor = 0.5
+        characterNameLabel.adjustsFontSizeToFitWidth = true
         
         nameLabelStackView.addArrangedSubview(nameLabel)
         nameLabelStackView.addArrangedSubview(characterNameLabel)
@@ -97,17 +102,22 @@ extension DetailsViewController{
         descriptionLabelStackView.distribution = .fill
         
         labelsStackView.addArrangedSubview(descriptionLabelStackView)
+        labelsStackView.addArrangedSubview(UIView())
         
         let descriptionLabel = UILabel()
         descriptionLabel.text = "Description"
         descriptionLabel.textColor = .red
         descriptionLabel.font = UIFont(name: "HelveticaNeue", size: 15.0)
+        descriptionLabel.minimumScaleFactor = 0.5
+        descriptionLabel.adjustsFontSizeToFitWidth = true
         
         characterDescriptionLabel = UILabel()
         characterDescriptionLabel.textColor = .gray
-        characterDescriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 15.0)
+        characterDescriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 13.0)
         characterDescriptionLabel.numberOfLines = 6
         characterDescriptionLabel.textAlignment = .natural
+        characterDescriptionLabel.minimumScaleFactor = 0.5
+        characterDescriptionLabel.adjustsFontSizeToFitWidth = true
         
         descriptionLabelStackView.addArrangedSubview(descriptionLabel)
         descriptionLabelStackView.addArrangedSubview(characterDescriptionLabel)
