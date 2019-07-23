@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterSearchTableViewCell: UITableViewCell {
 
     var characterImageView: UIImageView!
     var nameLabel: UILabel!
+    
+    var display: CharacterListDisplay?
 
-    func configure(){
+    func configure(display: CharacterListDisplay){
         
+        self.display = display
+        
+        characterImageView.sd_setImage(with: URL(string: display.thumb), completed: nil)
+        nameLabel.text = display.name
     }
 }
 
@@ -34,6 +41,8 @@ extension CharacterSearchTableViewCell{
         nameLabel = UILabel()
         nameLabel.textAlignment = .left
         nameLabel.numberOfLines = 1
+        nameLabel.textColor = .white
+        nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 15.0)
         
         addSubview(stackView)
         
@@ -43,6 +52,6 @@ extension CharacterSearchTableViewCell{
         stackView.addArrangedSubview(characterImageView)
         stackView.addArrangedSubview(nameLabel)
         
-        nameLabel.widthAnchor.constraint(equalTo: characterImageView.widthAnchor, multiplier: 9.0)
+        nameLabel.widthAnchor.constraint(equalTo: characterImageView.widthAnchor, multiplier: 9.0).isActive = true
     }
 }
