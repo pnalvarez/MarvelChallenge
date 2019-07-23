@@ -17,6 +17,8 @@ class CharacterListViewController: UIViewController {
     var defaultActivityIndicator: UIActivityIndicatorView!
     
     var presenter: CharacterListPresenterInput?
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class CharacterListViewController: UIViewController {
        setNeedsStatusBarAppearanceUpdate()
        initializeStackViews()
        initializeTableView()
+       initializeSearchController()
        handleEmptyTableView()
        addSearchButtom()
         
@@ -90,6 +93,15 @@ extension CharacterListViewController{
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         navigationItem.rightBarButtonItem = searchButton
     }
+    
+    private func initializeSearchController(){
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search character"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
 }
 
 extension CharacterListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -139,5 +151,12 @@ extension CharacterListViewController: CharacterListPresenterOutput{
         DispatchQueue.main.async {
             self.charactersTableView.reloadData()
         }
+    }
+}
+
+extension CharacterListViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }

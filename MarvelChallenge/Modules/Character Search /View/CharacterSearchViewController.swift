@@ -11,6 +11,10 @@ import UIKit
 class CharacterSearchViewController: UIViewController {
     
     var charactersTableView: UITableView!
+    
+    var presenter: CharacterSearchPresenterInput?
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +46,19 @@ extension CharacterSearchViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        guard let count = presenter?.numberOfRows() else{ return 0}
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = CharacterSearchTableViewCell()
+        
+        guard let display = presenter?.contentForRow(at: indexPath.row) else{ return UITableViewCell() }
+        
+        cell.configure(display: display)
+        
+        return cell
     }
 }

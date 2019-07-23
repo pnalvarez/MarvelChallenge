@@ -31,6 +31,7 @@ final class CharacterListPresenter: CharacterListPresenterInput{
     var wireframe: CharacterListWireframe
     
     private var charactersDisplay: [CharacterListDisplay] = []
+    private var filteredCharacters: [CharacterListDisplay] = []
     
     init(interactor: CharacterListInteractorInput, wireframe: CharacterListWireframe){
         self.interactor = interactor
