@@ -142,6 +142,13 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let display = presenter?.displayForRowInSection(index: indexPath.row) else{ return }
+        
+        presenter?.didSelectRow(with: display)
+    }
 }
 
 extension CharacterListViewController: CharacterListPresenterOutput{

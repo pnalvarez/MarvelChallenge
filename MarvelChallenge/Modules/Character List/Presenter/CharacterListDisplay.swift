@@ -13,15 +13,17 @@ struct CharacterListDisplay{
     var id: Int
     var thumb: String
     var name: String
+    var description: String
     
     static var total: Int{
         return CharacterEntity.total
     }
     
     
-    init(id: Int, thumb: String, name: String) {
+    init(id: Int, thumb: String, name: String, description: String) {
         self.id = id
         self.thumb = thumb
         self.name = name
+        self.description = description
     }
 }

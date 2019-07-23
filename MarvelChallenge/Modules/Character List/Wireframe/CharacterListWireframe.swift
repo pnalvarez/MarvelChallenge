@@ -11,8 +11,20 @@ import UIKit
 
 final class CharacterListWireframe{
     
+    var navigationController: UINavigationController?
+    
     func present(window: UIWindow){
         
-        window.rootViewController = UINavigationController(rootViewController: CharacterListViewControllerBuilder.make(wireframe: self))
+        self.navigationController = UINavigationController(rootViewController: CharacterListViewControllerBuilder.make(wireframe: self))
+        window.rootViewController = self.navigationController
+    }
+    
+    func presentDetails(display: CharacterListDisplay){
+        
+        let detailsDisplay = CharacterMapper.make(from: display)
+        
+        guard let navigationController = self.navigationController else{ return }
+        
+        DetailsWireframe().present(display: detailsDisplay, navigationController: navigationController)
     }
 }
