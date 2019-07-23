@@ -22,8 +22,8 @@ class LoadingTableViewCell: UITableViewCell {
         addSubview(activityIndicator)
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalToSystemSpacingAfter: centerXAnchor, multiplier: 1.0).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 1.0).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 1.0).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 1.0).isActive = true
         activityIndicator.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0).isActive = true
         activityIndicator.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
     }

@@ -31,8 +31,8 @@ extension CharacterListTableViewCell{
         self.addSubview(thumbImageView)
 
         thumbImageView.translatesAutoresizingMaskIntoConstraints = false
-        thumbImageView.centerXAnchor.constraint(equalToSystemSpacingAfter: centerXAnchor, multiplier: 1.0).isActive = true
-        thumbImageView.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 1.0).isActive = true
+        thumbImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        thumbImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         thumbImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0).isActive = true
         thumbImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
 
@@ -50,7 +50,7 @@ extension CharacterListTableViewCell{
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
-        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1.0).isActive = true
-        nameLabel.leftAnchor.constraint(equalToSystemSpacingAfter: leftAnchor, multiplier: 1.0).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 1.0).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 1.0).isActive = true
     }
 }

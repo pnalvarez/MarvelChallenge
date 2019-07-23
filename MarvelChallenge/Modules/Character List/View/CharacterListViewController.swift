@@ -25,6 +25,7 @@ class CharacterListViewController: UIViewController {
        initializeStackViews()
        initializeTableView()
        handleEmptyTableView()
+       addSearchButtom()
         
        presenter?.viewDidLoad()
     }
@@ -82,6 +83,12 @@ extension CharacterListViewController{
         defaultActivityIndicator.color = .white
         
         charactersTableView.backgroundView = defaultActivityIndicator
+    }
+    
+    private func addSearchButtom(){
+        
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
+        navigationItem.rightBarButtonItem = searchButton
     }
 }
 
