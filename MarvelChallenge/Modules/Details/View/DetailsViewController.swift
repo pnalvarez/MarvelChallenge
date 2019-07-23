@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     var characterImageView: UIImageView!
     var characterNameLabel: UILabel!
     var characterDescriptionLabel: UILabel!
+    var scrollView: UIScrollView!
     
     var presenter: DetailsPresenterInput?
     
@@ -22,7 +23,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
 //        view.backgroundColor = .blue
-        
+        initializeScrollView()
         initializeStackViews()
         initializeImageView()
         initializeLabels()
@@ -39,18 +40,19 @@ extension DetailsViewController{
         mainStackView.axis = .vertical
         mainStackView.distribution = .fillEqually
         
-        view.addSubview(mainStackView)
+        scrollView.addSubview(mainStackView)
         
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
     }
     
     private func initializeImageView(){
         
         characterImageView = UIImageView()
+        characterImageView.bounds.size.width = view.bounds.size.width
         characterImageView.contentMode = .scaleToFill
         
         mainStackView.addArrangedSubview(characterImageView)
@@ -124,6 +126,20 @@ extension DetailsViewController{
         
         characterDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         characterDescriptionLabel.heightAnchor.constraint(equalTo: descriptionLabel.heightAnchor, multiplier: 3.0).isActive = true
+    }
+    
+    private func initializeScrollView(){
+        
+        scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 2)
+        
+        view.addSubview(scrollView)
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
 
