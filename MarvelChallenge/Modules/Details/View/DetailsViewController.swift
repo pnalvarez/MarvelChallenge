@@ -45,8 +45,8 @@ extension DetailsViewController{
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
     private func initializeImageView(){
