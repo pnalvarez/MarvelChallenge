@@ -31,10 +31,10 @@ extension CharacterSearchViewController{
         view.addSubview(charactersTableView)
         
         charactersTableView.translatesAutoresizingMaskIntoConstraints = false
-        charactersTableView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 1.0).isActive = true
-        charactersTableView.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 1.0).isActive = true
-        charactersTableView.leftAnchor.constraint(equalToSystemSpacingAfter: view.leftAnchor, multiplier: 1.0).isActive = true
-        charactersTableView.rightAnchor.constraint(equalToSystemSpacingAfter: view.rightAnchor, multiplier: 1.0).isActive = true
+        charactersTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        charactersTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        charactersTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        charactersTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
 }
 
