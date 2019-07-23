@@ -192,6 +192,27 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
+		3F16E27022E7867B002B3E94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F16E27122E78681002B3E94 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3F16E27322E78698002B3E94 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
 		4F3B9F3922DE64D200A155FE = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +302,9 @@
 		4F3B9F7622DE678600A155FE /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				3F16E27122E78681002B3E94 /* Presenter */,
+				3F16E27022E7867B002B3E94 /* View */,
+				3F16E27322E78698002B3E94 /* Wireframe */,
 			);
 			path = Details;
 			sourceTree = "<group>";
