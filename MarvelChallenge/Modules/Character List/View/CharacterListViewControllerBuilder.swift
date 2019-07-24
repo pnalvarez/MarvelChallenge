@@ -20,7 +20,7 @@ struct CharacterListViewControllerBuilder{
         
         presenter.output = viewController
         viewController.presenter = presenter
-        
+
         return viewController
     }
 }

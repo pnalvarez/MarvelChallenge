@@ -16,17 +16,18 @@ class DetailsViewController: UIViewController {
     var characterNameLabel: UILabel!
     var characterDescriptionLabel: UILabel!
     var scrollView: UIScrollView!
+    var comicsScrollView: UIScrollView!
+    var pageControl: UIPageControl!
     
     var presenter: DetailsPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        view.backgroundColor = .blue
-        initializeScrollView()
         initializeStackViews()
         initializeImageView()
         initializeLabels()
+//        initializeComicsView()
         
         presenter?.viewDidLoad()
     }
@@ -40,11 +41,11 @@ extension DetailsViewController{
         mainStackView.axis = .vertical
         mainStackView.distribution = .fillEqually
         
-        scrollView.addSubview(mainStackView)
+        view.addSubview(mainStackView)
         
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
@@ -65,6 +66,7 @@ extension DetailsViewController{
         labelsStackView.distribution = .fillEqually
         
         mainStackView.addArrangedSubview(labelsStackView)
+        mainStackView.addArrangedSubview(UIView())
         labelsStackView.translatesAutoresizingMaskIntoConstraints = false
         characterImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: labelsStackView, attribute: .height, relatedBy: .equal, toItem: characterImageView, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true
@@ -104,7 +106,6 @@ extension DetailsViewController{
         descriptionLabelStackView.distribution = .fill
         
         labelsStackView.addArrangedSubview(descriptionLabelStackView)
-        labelsStackView.addArrangedSubview(UIView())
         
         let descriptionLabel = UILabel()
         descriptionLabel.text = "Description"
@@ -115,7 +116,7 @@ extension DetailsViewController{
         
         characterDescriptionLabel = UILabel()
         characterDescriptionLabel.textColor = .gray
-        characterDescriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 13.0)
+        characterDescriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 15.0)
         characterDescriptionLabel.numberOfLines = 6
         characterDescriptionLabel.textAlignment = .natural
         characterDescriptionLabel.minimumScaleFactor = 0.5
@@ -128,19 +129,59 @@ extension DetailsViewController{
         characterDescriptionLabel.heightAnchor.constraint(equalTo: descriptionLabel.heightAnchor, multiplier: 3.0).isActive = true
     }
     
-    private func initializeScrollView(){
+    private func initializeComicsView(){
         
-        scrollView = UIScrollView()
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 2)
+        let contentView = UIView()
+        comicsScrollView = UIScrollView()
         
-        view.addSubview(scrollView)
+        pageControl = UIPageControl()
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        guard let pageNumber = presenter?.getComicPages().count else{ return }
+        
+        comicsScrollView.contentSize = CGSize(width: contentView.frame.width * CGFloat(pageNumber), height: contentView.frame.height)
+        comicsScrollView.isPagingEnabled = true
+        
+        guard let comicPages = presenter?.getComicPages() else{ return }
+        
+        for i in 0..<pageNumber{
+            
+            let comicImageView = UIImageView(frame: CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height))
+            comicImageView.sd_setImage(with: URL(string: comicPages[i].thumb), completed: nil)
+            comicsScrollView.addSubview(comicImageView)
+        }
+        
+        pageControl.numberOfPages = pageNumber
+        pageControl.currentPage = 0
+        contentView.bringSubviewToFront(pageControl)
+
+        contentView.addSubview(comicsScrollView)
+
+        comicsScrollView.translatesAutoresizingMaskIntoConstraints = false
+        comicsScrollView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        comicsScrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        comicsScrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        comicsScrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        
+        mainStackView.addArrangedSubview(contentView)
+        
+        pageControl = UIPageControl(frame: CGRect(x: contentView.bounds.size.width / 2, y: contentView.bounds.size.height * 0.9, width: contentView.bounds.size.width, height: contentView.bounds.size.height * 0.9))
+        contentView.addSubview(pageControl)
     }
+    
+    
+//    private func initializeScrollView(){
+//
+//        scrollView = UIScrollView()
+//        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 2)
+//
+//        view.addSubview(scrollView)
+//
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//    }
 }
 
 extension DetailsViewController: DetailsPresenterOutput{
@@ -157,4 +198,8 @@ extension DetailsViewController: DetailsPresenterOutput{
         }
         characterDescriptionLabel.text = display.description
     }
+}
+
+extension DetailsViewController: UIScrollViewDelegate{
+    
 }

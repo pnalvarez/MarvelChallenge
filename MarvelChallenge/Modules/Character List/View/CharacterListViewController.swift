@@ -56,6 +56,8 @@ extension CharacterListViewController{
     
         headerImageView = UIImageView()
         headerImageView.image =  UIImage(named: "marvel-logo")
+        headerImageView.contentMode = .scaleToFill
+        headerImageView.bounds.size = CGSize(width: 60, height: 60)
 
         headerVerticalStackView = UIStackView()
         headerVerticalStackView.axis = .vertical
@@ -68,12 +70,10 @@ extension CharacterListViewController{
         headerHorizontalStackView.addArrangedSubview(UIView())
         headerHorizontalStackView.addArrangedSubview(headerImageView)
         headerHorizontalStackView.addArrangedSubview(UIView())
-
-        headerVerticalStackView.addArrangedSubview(UIView())
-        headerVerticalStackView.addArrangedSubview(headerHorizontalStackView)
-        headerVerticalStackView.addArrangedSubview(UIView())
         
-        navigationItem.titleView = headerImageView
+        headerVerticalStackView.addArrangedSubview(headerHorizontalStackView)
+        
+        navigationItem.titleView = headerHorizontalStackView
     }
     
     private func handleEmptyTableView(){
@@ -92,6 +92,11 @@ extension CharacterListViewController{
         
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         navigationItem.rightBarButtonItem = searchButton
+        
+        let emptySpace = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        emptySpace.isEnabled = false
+        emptySpace.tintColor = .clear
+        navigationItem.leftBarButtonItem = emptySpace
     }
     
     private func initializeSearchController(){

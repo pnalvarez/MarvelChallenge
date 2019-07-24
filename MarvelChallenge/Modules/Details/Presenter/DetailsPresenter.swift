@@ -11,6 +11,7 @@ import Foundation
 protocol DetailsPresenterInput{
     
     func viewDidLoad()
+    func getComicPages() -> [ComicEntity]
     
     var output: DetailsPresenterOutput?{get set}
 }
@@ -37,5 +38,12 @@ final class DetailsPresenter: DetailsPresenterInput{
         guard let display = detailsDisplay else{ return }
         
         output?.fetchedDetailsDisplay(display: display)
+    }
+    
+    func getComicPages() -> [ComicEntity] {
+        
+        guard let comics = detailsDisplay?.comics else{ return []}
+        
+        return comics
     }
 }
