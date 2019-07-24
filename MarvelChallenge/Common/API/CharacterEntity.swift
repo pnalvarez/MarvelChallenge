@@ -12,9 +12,19 @@ import ObjectMapper
 final class CharacterEntity: NSObject, Mappable{
     
     static var total: Int = 0
+    
     var id: Int = 0
     var name: String = ""
     var charDescription: String = ""
+    var comics: [String : Any] = [:]
+    var series: [String : Any] = [:]
+    var events: [String : Any] = [:]
+    var stories: [String : Any] = [:]
+    
+    var comicList: [ComicEntity]{
+        
+        return getEventsList() + getComicItems() + getSeriesItems() + getStoriesList()
+    }
     
     private var thumbnail: [String : Any] = [:]
     
@@ -38,5 +48,61 @@ final class CharacterEntity: NSObject, Mappable{
         name <- map["name"]
         thumbnail <- map["thumbnail"]
         charDescription <- map["description"]
+        comics <- map["comics"]
+        series <- map["series"]
+        stories <- map["stories"]
+        events <- map["events"]
+    }
+    
+    private func getComicItems() -> [ComicEntity]{
+        
+        var comicsList: [ComicEntity] = []
+        
+        if let items = comics["items"] as? [[String : Any]]{
+            
+            for item in items{
+                comicsList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
+            }
+        }
+        return comicsList
+    }
+    
+    private func getSeriesItems() -> [ComicEntity]{
+        
+        var seriesList: [ComicEntity] = []
+        
+        if let items = comics["series"] as? [[String : Any]]{
+            
+            for item in items{
+                seriesList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
+            }
+        }
+        return seriesList
+    }
+    
+    private func getStoriesList() -> [ComicEntity]{
+        
+        var storiesList: [ComicEntity] = []
+        
+        if let items = comics["stories"] as? [[String : Any]]{
+            
+            for item in items{
+                storiesList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
+            }
+        }
+        return storiesList
+    }
+    
+    private func getEventsList() -> [ComicEntity]{
+        
+        var eventsList: [ComicEntity] = []
+        
+        if let items = comics["events"] as? [[String : Any]]{
+            
+            for item in items{
+                eventsList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
+            }
+        }
+        return eventsList
     }
 }
