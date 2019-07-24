@@ -71,7 +71,7 @@ final class CharacterEntity: NSObject, Mappable{
         
         var seriesList: [ComicEntity] = []
         
-        if let items = comics["series"] as? [[String : Any]]{
+        if let items = series["items"] as? [[String : Any]]{
             
             for item in items{
                 seriesList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
@@ -84,7 +84,7 @@ final class CharacterEntity: NSObject, Mappable{
         
         var storiesList: [ComicEntity] = []
         
-        if let items = comics["stories"] as? [[String : Any]]{
+        if let items = stories["items"] as? [[String : Any]]{
             
             for item in items{
                 storiesList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))
@@ -97,7 +97,7 @@ final class CharacterEntity: NSObject, Mappable{
         
         var eventsList: [ComicEntity] = []
         
-        if let items = comics["events"] as? [[String : Any]]{
+        if let items = events["items"] as? [[String : Any]]{
             
             for item in items{
                 eventsList.append(ComicEntity(title: item["name"] as! String, thumb: item["resourceURI"] as! String))

@@ -13,10 +13,12 @@ struct DetailsDisplay{
     var name: String
     var thumb: String
     var description: String
+    var comics: [ComicEntity] = []
     
-    init(name: String, thumb: String, description: String) {
+    init(name: String, thumb: String, description: String, comics: [ComicEntity]) {
         self.name = name
         self.thumb = thumb
         self.description = description
+        self.comics = comics
     }
 }
