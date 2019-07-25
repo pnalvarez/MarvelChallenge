@@ -20,6 +20,17 @@ final class CharacterMapper{
         return displayList
     }
     
+    static func make(from characterList: [CharacterAPIModel]) -> [CharacterEntity]{
+        
+        var characters: [CharacterEntity] = []
+        
+        for item in characterList{
+            characters.append(CharacterMapper.make(from: item))
+        }
+        
+        return characters
+    }
+    
     static func make(from character: CharacterEntity) -> CharacterListDisplay{
         
         return CharacterListDisplay(id: character.id, thumb: character.thumb, name: character.name, description: character.charDescription, comics: character.comicList)
@@ -28,5 +39,10 @@ final class CharacterMapper{
     static func make(from character: CharacterListDisplay) -> DetailsDisplay{
         
         return DetailsDisplay(name: character.name, thumb: character.thumb, description: character.description, comics: character.comics)
+    }
+    
+    static func make(from character: CharacterAPIModel) -> CharacterEntity{
+        
+        return CharacterEntity(id: character.id, name: character.name, thumb: character.thumb, charDescription: character.charDescription, comicList: character.comicList)
     }
 }

@@ -18,7 +18,7 @@ final class CharacterSearchManager: CharacterSearchManagerInput{
     func fetchPortion(offset: Int, completion: @escaping ([CharacterEntity]) -> ()) {
        
         APIProvider().getCharacters(offset: offset, limit: 100){ characters in
-            completion(characters)
+            completion(CharacterMapper.make(from: characters))
         }
     }
 }

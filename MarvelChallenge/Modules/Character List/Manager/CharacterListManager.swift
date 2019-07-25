@@ -19,7 +19,7 @@ final class CharacterListManager: CharacterListManagerInput{
     func getInitialCharacterList(completion: @escaping ([CharacterEntity]) -> ()) {
         
         APIProvider().getCharacters(offset: 0, limit: 6){ characters in
-            completion(characters)
+            completion(CharacterMapper.make(from: characters))
         }
     }
     
@@ -28,7 +28,7 @@ final class CharacterListManager: CharacterListManagerInput{
         APIProvider().getCharacters(offset: offset, limit: 1){  characters in
             
             if characters.count > 0{
-                completion(characters[0])
+                completion(CharacterMapper.make(from: characters[0]))
             }
         }
     }
