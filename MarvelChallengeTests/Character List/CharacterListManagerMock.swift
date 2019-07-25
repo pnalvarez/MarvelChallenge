@@ -22,6 +22,6 @@ final class CharacterListInteractorMock: CharacterListInteractorInput{
     
     func loadNextCharacter(offset: Int) {
         
-        output?.loadedCharacters(characters: [characterList[0]])
+        output?.loadedCharacters(characters: [characterList[offset]])
     }
 }

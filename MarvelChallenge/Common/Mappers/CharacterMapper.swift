@@ -33,7 +33,7 @@ final class CharacterMapper{
     
     static func make(from character: CharacterEntity) -> CharacterListDisplay{
         
-        return CharacterListDisplay(id: character.id, thumb: character.thumb, name: character.name, description: character.charDescription, comics: character.comicList)
+        return CharacterListDisplay(id: character.id, name: character.name, thumb: character.thumb, description: character.charDescription, comics: character.comicList)
     }
     
     static func make(from character: CharacterListDisplay) -> DetailsDisplay{

@@ -10,9 +10,7 @@ import Foundation
 
 struct CharacterListInteractorBuilder{
     
-    static func make() -> CharacterListInteractor{
-        
-        let manager = CharacterListManager()
+    static func make(manager: CharacterListManagerInput) -> CharacterListInteractor{
         
         return CharacterListInteractor(manager: manager)
     }

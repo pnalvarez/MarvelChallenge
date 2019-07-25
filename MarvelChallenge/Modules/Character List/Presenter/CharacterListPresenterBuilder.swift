@@ -12,7 +12,8 @@ struct CharacterListPresenterBuilder{
     
     static func make(wireframe: CharacterListWireframe) -> CharacterListPresenter{
         
-        let interactor = CharacterListInteractorBuilder.make()
+        let manager = CharacterListManager()
+        let interactor = CharacterListInteractorBuilder.make(manager: manager)
         let presenter = CharacterListPresenter(interactor: interactor, wireframe: wireframe)
         
         interactor.output = presenter

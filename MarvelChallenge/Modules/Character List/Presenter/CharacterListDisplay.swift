@@ -21,7 +21,7 @@ struct CharacterListDisplay{
     }
     
     
-    init(id: Int, thumb: String, name: String, description: String, comics: [ComicEntity]) {
+    init(id: Int, name: String, thumb: String, description: String, comics: [ComicEntity]) {
         self.id = id
         self.thumb = thumb
         self.name = name
