@@ -63,3 +63,4 @@ extension CharacterSearchPresenter: CharacterSearchInteractorOutput{
         self.output?.updateUI()
     }
 }
+

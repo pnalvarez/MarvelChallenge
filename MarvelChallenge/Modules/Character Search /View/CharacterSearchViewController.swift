@@ -74,9 +74,9 @@ extension CharacterSearchViewController: CharacterSearchPresenterOutput{
     }
 }
 
-extension CharacterSearchViewController: UISearchResultsUpdating{
+extension CharacterSearchViewController: CharacterListViewControllerDelegate{
     
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+    func filterContentForSearchText(_ searchText: String) {
+        
     }
 }

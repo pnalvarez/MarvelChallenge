@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CharacterListViewControllerDelegate{
+    
+    func filterContentForSearchText(_ searchText: String)
+}
+
 class CharacterListViewController: UIViewController {
     
     var charactersTableView: UITableView!
@@ -19,6 +24,8 @@ class CharacterListViewController: UIViewController {
     var presenter: CharacterListPresenterInput?
     
     var characterSearchViewController: CharacterSearchViewController!
+    
+    var delegate: CharacterListViewControllerDelegate?
     
     var searchController: UISearchController!
 
@@ -104,9 +111,10 @@ extension CharacterListViewController{
     private func initializeSearchController(){
         
         characterSearchViewController = presenter?.initializeSearchViewController()
+        delegate = characterSearchViewController
         searchController = UISearchController(searchResultsController: characterSearchViewController)
         
-        searchController.searchResultsUpdater = characterSearchViewController
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search character"
         navigationItem.searchController = searchController
@@ -170,3 +178,21 @@ extension CharacterListViewController: CharacterListPresenterOutput{
         }
     }
 }
+
+extension CharacterListViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let searchText = searchController.searchBar.text else{ return }
+        
+        delegate?.filterContentForSearchText(searchText)
+    }
+}
+
+extension CharacterListViewController{
+    
+    func searchBarIsEmpty() -> Bool{
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+}
+
