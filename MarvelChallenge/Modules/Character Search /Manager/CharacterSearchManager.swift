@@ -10,14 +10,15 @@ import Foundation
 
 protocol CharacterSearchManagerInput{
     
-    func fetchAll(completion: @escaping ([CharacterEntity]) -> ())
+    func fetchPortion(offset: Int, completion: @escaping ([CharacterEntity]) -> ())
 }
 
 final class CharacterSearchManager: CharacterSearchManagerInput{
     
-    func fetchAll(completion: @escaping ([CharacterEntity]) -> ()) {
-        
-        var totalCharacters: Int = 0
+    func fetchPortion(offset: Int, completion: @escaping ([CharacterEntity]) -> ()) {
        
+        APIProvider().getCharacters(offset: offset, limit: 100){ characters in
+            completion(characters)
+        }
     }
 }

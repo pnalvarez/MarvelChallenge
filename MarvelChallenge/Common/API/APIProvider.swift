@@ -14,7 +14,7 @@ final class APIProvider{
     
     let baseURL = "http://gateway.marvel.com/v1/public/characters"
     
-    var totalCharacters: Int = 0
+    let apiTotal: Int = 1492
     
     func getCharacters(offset: Int, limit: Int, completion: @escaping ([CharacterEntity]) -> ()){
         
@@ -30,35 +30,9 @@ final class APIProvider{
             completion(chars)
         }
     }
-    
-    func getAllCharacters(completion: @escaping ([CharacterEntity]) -> ()){
-        
-        var characters: [CharacterEntity] = []
-        
-        getCharactersCount{ total in
-            self.totalCharacters = total
-        }
-        
-        
-        
-    }
 }
 
 extension APIProvider{
-    
-    private func getCharactersCount(completion: @escaping (Int) -> ()){
-        
-        let url = baseURL+"?ts=1&apikey=5d270d6ba90b8e7de71d2a65b6cce967&hash=1eb2d8a190e62c0ecf934462a91eb071"
-        
-        request(url: url){ characters in
-            
-            guard let result = characters, let data = result["data"] as? [String : Any], let total = data["total"] as? Int else{
-                completion(0)
-                return
-            }
-            completion(total)
-        }
-    }
     
     private func request(url: String, completion: @escaping ([String: Any]?) -> ()){
         
