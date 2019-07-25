@@ -15,8 +15,12 @@ struct CharacterListViewControllerBuilder{
     
     static func make(wireframe: CharacterListWireframe) -> CharacterListViewController{
         
+        let manager = CharacterListManager()
+        let interactor = CharacterListInteractorBuilder.make(manager: manager)
         let viewController = CharacterListViewController()
-        let presenter = CharacterListPresenterBuilder.make(wireframe: wireframe)
+        let presenter = CharacterListPresenterBuilder.make(wireframe: wireframe, interactor: interactor)
+        
+        interactor.output = presenter
         
         presenter.output = viewController
         viewController.presenter = presenter

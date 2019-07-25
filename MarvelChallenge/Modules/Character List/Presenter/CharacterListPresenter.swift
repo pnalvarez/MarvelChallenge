@@ -16,7 +16,7 @@ protocol CharacterListPresenterInput{
     func cellWillDisplay(index: Int)
     func didSelectRow(with display: CharacterListDisplay)
     
-    var output: CharacterListPresenterOutput?{get}
+    var output: CharacterListPresenterOutput?{get set}
 }
 
 protocol CharacterListPresenterOutput: class{
