@@ -10,7 +10,14 @@ import Foundation
 
 struct CharacterSearchViewControllerBuilder{
     
-    static func make(display: CharacterListDisplay){
+    static func make(wireframe: CharacterSearchWireframe) -> CharacterSearchViewController{
         
+        let presenter = CharacterSearchPresenterBuilder.make(wireframe: wireframe)
+        let viewController = CharacterSearchViewController()
+        
+        viewController.presenter = presenter
+        presenter.output = viewController
+        
+        return viewController
     }
 }

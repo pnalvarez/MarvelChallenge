@@ -12,17 +12,30 @@ protocol CharacterSearchPresenterInput{
     
     func numberOfRows() -> Int
     func contentForRow(at index: Int) -> CharacterListDisplay
+    func viewDidLoad()
+    
+    var output: CharacterSearchPresenterOutput?{get set}
+}
+
+protocol CharacterSearchPresenterOutput: class{
+    
 }
 
 final class CharacterSearchPresenter: CharacterSearchPresenterInput{
     
     var wireframe: CharacterSearchWireframe
+    var interactor: CharacterSearchInteractorInput
+    weak var output: CharacterSearchPresenterOutput?
     
     var charactersDisplay: [CharacterListDisplay] = []
     
-    init(wireframe: CharacterSearchWireframe, charactersDisplay: [CharacterListDisplay]) {
+    init(wireframe: CharacterSearchWireframe, interactor: CharacterSearchInteractorInput) {
         self.wireframe = wireframe
-        self.charactersDisplay = charactersDisplay
+        self.interactor = interactor
+    }
+    
+    func viewDidLoad() {
+        interactor.fetchAll()
     }
     
     func numberOfRows() -> Int {
@@ -33,5 +46,12 @@ final class CharacterSearchPresenter: CharacterSearchPresenterInput{
     func contentForRow(at index: Int) -> CharacterListDisplay {
         
         return charactersDisplay[index]
+    }
+}
+
+extension CharacterSearchPresenter: CharacterSearchInteractorOutput{
+    
+    func fetchedCharacters(output: [CharacterEntity]) {
+        self.charactersDisplay = CharacterMapper.make(from: output)
     }
 }

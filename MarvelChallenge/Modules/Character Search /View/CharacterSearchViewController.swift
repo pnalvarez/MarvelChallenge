@@ -62,3 +62,7 @@ extension CharacterSearchViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
 }
+
+extension CharacterSearchViewController: CharacterSearchPresenterOutput{
+    
+}

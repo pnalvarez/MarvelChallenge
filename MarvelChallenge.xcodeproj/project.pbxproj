@@ -30,6 +30,8 @@
 		3F16E2AD22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2AC22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift */; };
 		3F16E2B022E907E2002B3E94 /* CharacterSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2AF22E907E2002B3E94 /* CharacterSearchInteractor.swift */; };
 		3F16E2B322E90833002B3E94 /* CharacterSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2B222E90833002B3E94 /* CharacterSearchManager.swift */; };
+		3F16E2B522E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2B422E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift */; };
+		3F16E2B722E92F9B002B3E94 /* CharacterSearchPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2B622E92F9B002B3E94 /* CharacterSearchPresenterBuilder.swift */; };
 		4F3B9F4622DE64D200A155FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4522DE64D200A155FE /* AppDelegate.swift */; };
 		4F3B9F4D22DE64D300A155FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B9F4C22DE64D300A155FE /* Assets.xcassets */; };
 		4F3B9F5B22DE64D400A155FE /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B9F5A22DE64D400A155FE /* MarvelChallengeTests.swift */; };
@@ -96,6 +98,8 @@
 		3F16E2AC22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchControllerBuilder.swift; sourceTree = "<group>"; };
 		3F16E2AF22E907E2002B3E94 /* CharacterSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchInteractor.swift; sourceTree = "<group>"; };
 		3F16E2B222E90833002B3E94 /* CharacterSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchManager.swift; sourceTree = "<group>"; };
+		3F16E2B422E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchInteractorBuilder.swift; sourceTree = "<group>"; };
+		3F16E2B622E92F9B002B3E94 /* CharacterSearchPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchPresenterBuilder.swift; sourceTree = "<group>"; };
 		4F3B9F4222DE64D200A155FE /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3B9F4522DE64D200A155FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3B9F4C22DE64D300A155FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				3F16E26C22E77D41002B3E94 /* CharacterSearchPresenter.swift */,
+				3F16E2B622E92F9B002B3E94 /* CharacterSearchPresenterBuilder.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				3F16E2AF22E907E2002B3E94 /* CharacterSearchInteractor.swift */,
+				3F16E2B422E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -355,8 +361,8 @@
 		4F3B9F7722DE678E00A155FE /* Character Search  */ = {
 			isa = PBXGroup;
 			children = (
-				3F16E2B122E90824002B3E94 /* Manager */,
 				3F16E2AE22E907D3002B3E94 /* Interactor */,
+				3F16E2B122E90824002B3E94 /* Manager */,
 				3F16E26322E14FE9002B3E94 /* Presenter */,
 				3F16E26222E14FE5002B3E94 /* View */,
 				3F16E26522E14FFA002B3E94 /* Wireframe */,
@@ -724,10 +730,12 @@
 				4F3B9F8222DE696400A155FE /* SplashViewControllerBuilder.swift in Sources */,
 				4F3B9F8022DE695100A155FE /* SplashViewController.swift in Sources */,
 				3F16E25B22DF91D5002B3E94 /* ReusableView.swift in Sources */,
+				3F16E2B522E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift in Sources */,
 				4F3B9F9E22DE763000A155FE /* CharacterListInteractorBuilder.swift in Sources */,
 				3F16E26722E15185002B3E94 /* CharacterSearchTableViewCell.swift in Sources */,
 				3F16E26122E14FD8002B3E94 /* CharacterSearchViewController.swift in Sources */,
 				4F3B9FA022DE7C8E00A155FE /* UINavigationBar.swift in Sources */,
+				3F16E2B722E92F9B002B3E94 /* CharacterSearchPresenterBuilder.swift in Sources */,
 				3F16E26B22E77C39002B3E94 /* CharacterSearchViewControllerBuilder.swift in Sources */,
 				4F3B9F9222DE74E700A155FE /* CharacterListViewController.swift in Sources */,
 				3F16E26D22E77D41002B3E94 /* CharacterSearchPresenter.swift in Sources */,
