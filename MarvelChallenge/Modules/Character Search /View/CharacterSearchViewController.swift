@@ -65,4 +65,9 @@ extension CharacterSearchViewController: UITableViewDelegate, UITableViewDataSou
 
 extension CharacterSearchViewController: CharacterSearchPresenterOutput{
     
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.charactersTableView.reloadData()
+        }
+    }
 }

@@ -19,6 +19,7 @@ protocol CharacterSearchPresenterInput{
 
 protocol CharacterSearchPresenterOutput: class{
     
+    func updateUI()
 }
 
 final class CharacterSearchPresenter: CharacterSearchPresenterInput{
@@ -53,5 +54,6 @@ extension CharacterSearchPresenter: CharacterSearchInteractorOutput{
     
     func fetchedCharacters(output: [CharacterEntity]) {
         self.charactersDisplay = CharacterMapper.make(from: output)
+        self.output?.updateUI()
     }
 }
