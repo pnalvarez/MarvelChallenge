@@ -13,6 +13,7 @@ protocol CharacterSearchPresenterInput{
     func numberOfRows() -> Int
     func contentForRow(at index: Int) -> CharacterListDisplay
     func viewDidLoad()
+    func didSelectRow(at index: Int)
     
     var output: CharacterSearchPresenterOutput?{get set}
 }
@@ -24,13 +25,14 @@ protocol CharacterSearchPresenterOutput: class{
 
 final class CharacterSearchPresenter: CharacterSearchPresenterInput{
     
-    var wireframe: CharacterSearchWireframe
+    var wireframe: CharacterListWireframe
     var interactor: CharacterSearchInteractorInput
     weak var output: CharacterSearchPresenterOutput?
     
     var charactersDisplay: [CharacterListDisplay] = []
+    var filteredCharactersDisplay: [CharacterListDisplay] = []
     
-    init(wireframe: CharacterSearchWireframe, interactor: CharacterSearchInteractorInput) {
+    init(wireframe: CharacterListWireframe, interactor: CharacterSearchInteractorInput) {
         self.wireframe = wireframe
         self.interactor = interactor
     }
@@ -47,6 +49,10 @@ final class CharacterSearchPresenter: CharacterSearchPresenterInput{
     func contentForRow(at index: Int) -> CharacterListDisplay {
         
         return charactersDisplay[index]
+    }
+    
+    func didSelectRow(at index: Int) {
+        
     }
 }
 

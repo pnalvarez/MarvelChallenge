@@ -10,7 +10,7 @@ import Foundation
 
 struct CharacterSearchPresenterBuilder{
     
-    static func make(wireframe: CharacterSearchWireframe) -> CharacterSearchPresenter{
+    static func make(wireframe: CharacterListWireframe) -> CharacterSearchPresenter{
         
         let interactor = CharacterSearchInteractorBuilder.make()
         let presenter = CharacterSearchPresenter(wireframe: wireframe, interactor: interactor)

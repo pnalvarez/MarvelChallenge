@@ -27,7 +27,6 @@
 		3F16E27D22E792BC002B3E94 /* DetailsViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E27C22E792BC002B3E94 /* DetailsViewControllerBuilder.swift */; };
 		3F16E27F22E792EF002B3E94 /* DetailsPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E27E22E792EF002B3E94 /* DetailsPresenterBuilder.swift */; };
 		3F16E2AB22E7E1B3002B3E94 /* ComicEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2AA22E7E1B3002B3E94 /* ComicEntity.swift */; };
-		3F16E2AD22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2AC22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift */; };
 		3F16E2B022E907E2002B3E94 /* CharacterSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2AF22E907E2002B3E94 /* CharacterSearchInteractor.swift */; };
 		3F16E2B322E90833002B3E94 /* CharacterSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2B222E90833002B3E94 /* CharacterSearchManager.swift */; };
 		3F16E2B522E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E2B422E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift */; };
@@ -100,7 +99,6 @@
 		3F16E27C22E792BC002B3E94 /* DetailsViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerBuilder.swift; sourceTree = "<group>"; };
 		3F16E27E22E792EF002B3E94 /* DetailsPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterBuilder.swift; sourceTree = "<group>"; };
 		3F16E2AA22E7E1B3002B3E94 /* ComicEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicEntity.swift; path = MarvelChallenge/Common/API/ComicEntity.swift; sourceTree = SOURCE_ROOT; };
-		3F16E2AC22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchControllerBuilder.swift; sourceTree = "<group>"; };
 		3F16E2AF22E907E2002B3E94 /* CharacterSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchInteractor.swift; sourceTree = "<group>"; };
 		3F16E2B222E90833002B3E94 /* CharacterSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchManager.swift; sourceTree = "<group>"; };
 		3F16E2B422E92F86002B3E94 /* CharacterSearchInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchInteractorBuilder.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				3F16E26022E14FD8002B3E94 /* CharacterSearchViewController.swift */,
 				3F16E26622E15185002B3E94 /* CharacterSearchTableViewCell.swift */,
 				3F16E26A22E77C39002B3E94 /* CharacterSearchViewControllerBuilder.swift */,
-				3F16E2AC22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,7 +756,6 @@
 				3F16E27522E786D4002B3E94 /* DetailsViewController.swift in Sources */,
 				3F16E25D22DF9217002B3E94 /* UITableViewCell.swift in Sources */,
 				4F3B9F9C22DE75F100A155FE /* CharacterListInteractor.swift in Sources */,
-				3F16E2AD22E9062A002B3E94 /* CharacterSearchControllerBuilder.swift in Sources */,
 				3F16E2AB22E7E1B3002B3E94 /* ComicEntity.swift in Sources */,
 				4F3B9F8622DE69A600A155FE /* SplashPresenterBuilder.swift in Sources */,
 				4F3B9F9A22DE75B500A155FE /* CharacterListManager.swift in Sources */,

@@ -61,6 +61,8 @@ extension CharacterSearchViewController: UITableViewDelegate, UITableViewDataSou
         
         return cell
     }
+    
+
 }
 
 extension CharacterSearchViewController: CharacterSearchPresenterOutput{
@@ -69,5 +71,12 @@ extension CharacterSearchViewController: CharacterSearchPresenterOutput{
         DispatchQueue.main.async {
             self.charactersTableView.reloadData()
         }
+    }
+}
+
+extension CharacterSearchViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }

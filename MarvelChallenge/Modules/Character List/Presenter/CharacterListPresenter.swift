@@ -15,6 +15,7 @@ protocol CharacterListPresenterInput{
     func displayForRowInSection(index: Int) -> CharacterListDisplay?
     func cellWillDisplay(index: Int)
     func didSelectRow(with display: CharacterListDisplay)
+    func initializeSearchViewController() -> CharacterSearchViewController
     
     var output: CharacterListPresenterOutput?{get set}
 }
@@ -63,6 +64,11 @@ final class CharacterListPresenter: CharacterListPresenterInput{
     
     func didSelectRow(with display: CharacterListDisplay) {
         wireframe.presentDetails(display: display)
+    }
+    
+    func initializeSearchViewController() -> CharacterSearchViewController {
+        
+        return CharacterSearchViewControllerBuilder.make(wireframe: wireframe)
     }
 }
 

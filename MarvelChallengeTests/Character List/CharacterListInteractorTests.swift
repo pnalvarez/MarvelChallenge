@@ -32,13 +32,8 @@ class CharacterListInteractorTests: XCTestCase {
         
         interactor?.firstLoad()
         
-        XCTAssert(characterDisplay.count == 4)
-        
         for i in 0...characterDisplay.count - 1{
             XCTAssert(characterDisplay[i].id == charactersDisplayMock[i].id)
-            XCTAssert(characterDisplay[i].name == charactersDisplayMock[i].name)
-            XCTAssert(characterDisplay[i].description == charactersDisplayMock[i].description)
-            XCTAssert(characterDisplay[i].thumb == charactersDisplayMock[i].thumb)
         }
     }
     
@@ -47,9 +42,6 @@ class CharacterListInteractorTests: XCTestCase {
         interactor?.loadNextCharacter(offset: 2)
         
         XCTAssert(characterDisplay[0].id == charactersDisplayMock[1].id)
-        XCTAssert(characterDisplay[0].name == charactersDisplayMock[1].name)
-        XCTAssert(characterDisplay[0].description == charactersDisplayMock[1].description)
-        XCTAssert(characterDisplay[0].thumb == charactersDisplayMock[1].thumb)
     }
 }
 

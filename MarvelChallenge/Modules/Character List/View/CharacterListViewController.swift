@@ -18,7 +18,9 @@ class CharacterListViewController: UIViewController {
     
     var presenter: CharacterListPresenterInput?
     
-    let searchController = UISearchController(searchResultsController: nil)
+    var characterSearchViewController: CharacterSearchViewController!
+    
+    var searchController: UISearchController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +103,10 @@ extension CharacterListViewController{
     
     private func initializeSearchController(){
         
-        searchController.searchResultsUpdater = self
+        characterSearchViewController = presenter?.initializeSearchViewController()
+        searchController = UISearchController(searchResultsController: characterSearchViewController)
+        
+        searchController.searchResultsUpdater = characterSearchViewController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search character"
         navigationItem.searchController = searchController
@@ -163,12 +168,5 @@ extension CharacterListViewController: CharacterListPresenterOutput{
         DispatchQueue.main.async {
             self.charactersTableView.reloadData()
         }
-    }
-}
-
-extension CharacterListViewController: UISearchResultsUpdating{
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
     }
 }
